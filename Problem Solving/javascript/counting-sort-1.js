@@ -1,5 +1,7 @@
 'use strict';
 
+const fs = require('fs');
+
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -21,26 +23,34 @@ function readLine() {
 }
 
 /*
- * Complete the 'miniMaxSum' function below.
+ * Complete the 'countingSort' function below.
  *
+ * The function is expected to return an INTEGER_ARRAY.
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-function miniMaxSum(arr) {
-let sumValue = arr.reduce((a, b) => {
-  return a + b;
-});
-
-const min = sumValue - Math.max(...arr);
-const max = sumValue - Math.min(...arr);
-const result =  `${min} ${max}`
-
-console.log(result);
+function countingSort(arr) {
+    let result = [];
+    const maxSize = 100
+    result.length = maxSize;
+    
+    result.fill(0);
+    
+    arr.forEach( (v,i) => result[v]++ );
+    
+    return result;
 }
 
 function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+    const n = parseInt(readLine().trim(), 10);
 
     const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
 
-    miniMaxSum(arr);
+    const result = countingSort(arr);
+
+    ws.write(result.join(' ') + '\n');
+
+    ws.end();
 }
