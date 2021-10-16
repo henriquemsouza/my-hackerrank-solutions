@@ -9,17 +9,14 @@
 // a = [2, 4]
 // b = [16, 32, 96]
 
-
-
-
 const getTotalX = (a, b) => {
   let potential = [],
-    final = []
-  for (let i = a[a.length - 1]; i <= b[0]; i++) {
-    if (a.every((x) => i % x === 0)) potential.push(i)
+      final = []
+  for (let index = a[a.length - 1]; index <= b[0]; index++) {
+    if (a.every((x) => index % x === 0)) potential.push(index)
   }
-  for (let i = 0, len = potential.length; i < len; i++) {
-    if (b.every((x) => x % potential[i] === 0)) final.push(potential[i])
+  for (let secondIndex = 0, len = potential.length; secondIndex < len; secondIndex++) {
+    if (b.every((x) => x % potential[secondIndex] === 0)) final.push(potential[secondIndex])
   }
   return final.length
 }
