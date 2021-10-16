@@ -1,0 +1,14 @@
+{
+  "name": "my-hacker-rank-solutions",
+  "version": "1.0.0",
+  "author": "Henrique martins de Souza",
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "chai": "4.3.4",
+    "jest": "24.9.0"
+  }
+}
