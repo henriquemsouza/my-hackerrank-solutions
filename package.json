@@ -2,6 +2,10 @@
   "name": "my-hacker-rank-solutions",
   "version": "1.0.0",
   "author": "Henrique martins de Souza",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henriquemsouza/my-hackerrank-solutions"
+  },
   "scripts": {
     "test": "jest --config ./jest.config.json --verbose",
     "test:watch": "npm run test -- --watch"
